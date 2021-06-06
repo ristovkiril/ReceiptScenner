@@ -1,6 +1,7 @@
 package com.company.models;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class StoreHouse {
@@ -34,7 +35,9 @@ public class StoreHouse {
 
     private String printProducts(List<Product> products) {
         StringBuilder sb = new StringBuilder();
-        products.forEach(sb::append);
+        products.stream()
+                .sorted(Comparator.comparing(product -> product.name))
+                .forEach(sb::append);
         return sb.toString();
     }
 

@@ -26,7 +26,7 @@ public class Product {
     public String toString() {
         return  "\t" + name
                 + "\n\tPrice: " + price
-                + "\n\t" + description
-                + "\n\t" + "Weight: " + (weight != null ? weight : "N/A") + "\n";
+                + "\n\t" + description.substring(0, Math.min(description.length(), 30))
+                + "\n\tWeight: " + (weight != null ? weight : "N/A") + "\n";
     }
 }
